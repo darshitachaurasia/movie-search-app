@@ -1,7 +1,10 @@
 import React from "react";
 import { MovieCard } from "../components";
+import { useOutletContext } from "react-router-dom";
 
-function Favourites({ favourites, removeFromFavourites }) {
+function Favourites() {
+  const { favourites, removeFromFavourites } = useOutletContext();
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold text-center my-4 text-white">Favourites</h1>
@@ -13,7 +16,8 @@ function Favourites({ favourites, removeFromFavourites }) {
             <MovieCard
               key={movie.imdbID}
               movie={movie}
-              addToFavourites={removeFromFavourites}
+              addToFavourites={() => {}}
+              removeFromFavourites={removeFromFavourites}
               isFavourite={true}
             />
           ))}
@@ -24,6 +28,7 @@ function Favourites({ favourites, removeFromFavourites }) {
 }
 
 export default Favourites;
+
 
 
 

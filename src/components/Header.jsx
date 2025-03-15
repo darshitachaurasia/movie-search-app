@@ -42,14 +42,7 @@ function Header({ onSearch }) {
           {authStatus && <LogoutBtn />}
         </div>
 
-        {/* Search Input */}
-        <input
-          type="text"
-          placeholder="Search movies..."
-          value={search}
-          onChange={handleSearch}
-          className="p-2 w-60 rounded-md bg-gray-700 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500"
-        />
+        
       </nav>
     </header>
   );
