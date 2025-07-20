@@ -7,7 +7,7 @@ function Home() {
   const { addToFavourites, removeFromFavourites, favourites } = useOutletContext();
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("dil");
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -41,8 +41,7 @@ function Home() {
 
       {/* Display Movies */}
       {loading && <h1 className="text-center text-blue-500">Loading...</h1>}
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+      {search && <div className="grid grid-cols-1 mx-15 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {movies.map((movie) => (
           <MovieCard
             key={movie.imdbID}
@@ -52,7 +51,8 @@ function Home() {
             isFavourite={favourites.some((fav) => fav.imdbID === movie.imdbID)}
           />
         ))}
-      </div>
+      </div>}
+      
     </div>
   );
 }

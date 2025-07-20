@@ -63,7 +63,7 @@ function App() {
   };
 
   return !loading ? (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col min-h-screen bg-gray-200 text-black mx-auto">
       <Header onSearch={setSearchQuery} />
       <main className="flex-grow">
         <Outlet context={{ searchQuery, favourites, addToFavourites, removeFromFavourites }} />
